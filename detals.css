@@ -1,0 +1,77 @@
+.details-main {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.details-main h1 {
+    color: black;
+}
+
+
+.back-link {
+
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: black;
+    border-radius: 20px;
+    border: 2px solid #e98a98;
+    padding: 8px 10px;
+
+}
+
+.back-link a:hover {
+    background-color: #e98a98;
+    cursor: pointer;
+    color: white;
+
+}
+
+.details-page.product-card {
+
+
+    width: 40%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 192, 203, 0.626);
+    padding-bottom: 25px;
+   
+}
+
+
+.product-card-details img {
+    width: 90%;
+    height: auto;
+
+}
+
+
+/* რესპონსივობა */
+@media (max-width: 768px){
+.details-page.product-card {
+
+    width: 60%;
+    padding-bottom: 0;
+}
+
+
+.details-main{
+    gap: 40px;
+}
+
+.details-main h1{
+
+    margin-top: 30px;
+}
+
+}

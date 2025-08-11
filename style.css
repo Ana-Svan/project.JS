@@ -1,0 +1,489 @@
+/* ძირითადი რესეტი */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8f5f2;
+  color: #3a3a3a;
+  line-height: 1.6;
+}
+
+header {
+  /*background-color: #6d8b74;      
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: url(https://restaurant.stepprojects.ge/images/inner_banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+header p {
+  color: white;
+  font-size: 35px;
+  font-family: sans-serif;
+  font-style: italic;
+  letter-spacing: 0.5pc;
+
+}
+
+.logo {
+
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+
+
+
+
+.categori-cont {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.categori-cont h1 {
+  color: black;
+
+}
+
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: white;
+  position: absolute;
+  top: 40px;
+  right: 35px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -13px;
+  background-color: #e8b4bc;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.6rem;
+}
+
+/* კატეგორიების ფილტრი */
+.category-filter {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 1rem;
+  padding: 1.5rem;
+
+}
+
+
+
+.filt-btn-dropdown .filter-button {
+  width: 150px;
+  border: 3px solid #d89ca6 !important;
+
+}
+
+.filt-btn-dropdown {
+  order: 99;
+  position: relative;
+  width: 150px;
+
+}
+
+
+.filter-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px;
+  position: absolute;
+  right: -27px;
+  top: 37px;
+  width: 200px;
+  z-index: 100;
+  background-color: white;
+  border-radius: 10px;
+  border: 3px solid #d89ca6 !important;
+}
+
+.filter-dropdown span {
+  font-weight: bold;
+
+}
+
+
+
+.category-filter button {
+  background: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.active {
+  display: block !important;
+}
+
+.category-filter button:hover {
+  background-color: #e8b4bc;
+}
+
+.category-filter button.active {
+  background: #e8b4bc;
+  color: white;
+}
+
+/* პროდუქტების ბარათები */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: auto;
+  width: 300px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 80%;
+  height: 180px;
+  padding-left: 50px;
+  object-fit: cover;
+
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.product-info p {
+  color: #6d8b74;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  width: 100%;
+  padding: 0.7rem;
+  background: rgba(73, 110, 88, 0.767);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #5a7263;
+}
+
+/* კალათის მოდალი */
+.cart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-content input {
+  border: 1.8px solid rgb(104, 98, 98);
+  border-radius: 5px;
+  height: 28px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.modal-content ::placeholder {
+  padding-left: 5px;
+
+}
+
+.modal-content .butt-style {
+  height: 28px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background: #e8b4bc;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.modal-content .butt-style:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+
+}
+
+
+.link-register {
+  color: #e98a98;
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
+
+
+
+#close-X {
+  color: black;
+
+
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-items {
+  margin: 1.5rem 0;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #e8b4bc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 18px;
+}
+
+.checkout-btn:hover {
+  background: #d89ca6;
+}
+
+
+
+
+footer {
+  height: 30px;
+  width: 100%;
+  background-color: #5a7263;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+}
+
+footer p {
+  color: white;
+
+}
+
+
+
+
+
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-item .item-info {
+  flex: 1;
+}
+
+.remove-item {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+
+
+
+
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.remove-item {
+  background-color: red;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.quantity-controls button {
+  width: 25px;
+  height: 25px;
+  font-size: 18px;
+  border: none;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.quantity-controls button:hover {
+  background-color: #bbb;
+}
+
+.qty-number {
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}
+
+
+.reg-form,
+.login-form,
+.cart {
+  display: none;
+}
+
+
+#extra-filter {
+
+  display: none;
+}
+
+
+
+
+
+
+
+
+/* რესპონსივობა */
+@media (max-width: 768px) {
+
+  .header-content {
+    padding-top: 70px;
+
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-filter {
+    padding: 1rem;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+  .header-content {
+    padding-top: 70px;
+
+  }
+
+  .header-content p {
+    font-size: 30px;
+
+  }
+}
+
+
+.hidden {
+  display: none !important;
+}

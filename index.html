@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asian Food Delivery</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+ <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a title="Crave Ordering" href="/index.html">
+
+        <img src="./imagine/logo.js.project.png" alt="Crave Ordering">
+      </a>
+    </div>
+    <div class="header-content">
+      <p>Delicious Asian food Delivery</p>
+      <div class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="filter-container">
+
+    </div>
+
+
+
+
+
+    <div class="categori-cont">
+      <h1>Categories</h1>
+    </div>
+    <div class="category-filter">
+
+      <div class="filt-btn-dropdown">
+        <button class="filter-button">Extra Filter </button>
+        <div id="extra-filter">
+
+          <div class="filter-dropdown">
+            <div class="checkbox-group">
+              <input type="checkbox" id="nuts">
+              <label for="nuts">Nuts only</label>
+            </div>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="vegetables">
+              <label for="vegetables">Vegetables only</label>
+            </div>
+            <span>Spiciness</span>
+            <label for="range">Spiciness: <span id="spice-level">Not Chosen</span></label>
+            <input type="range" name="range" id="range" min="0" max="4" value="0">
+            <button class="extra-filter-btn">Apply Filter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="products-grid"></div>
+
+    <div class="cart-modal hidden">
+      <div class="modal-content">
+        <div class="login-form active">
+          <form>
+            <input type="text" placeholder="Phone" class="phoneLogin">
+            <input type="password" placeholder="Password" class="passwordLogin">
+            <button class="btnLogin butt-style">Log In</button>
+          </form>
+          <a class="link-register ">Register</a>
+        </div>
+
+        <div class="reg-form">
+          <form>
+            <input type="password" placeholder="Password" class="password">
+            <input type="email" placeholder="Email" class="regEmail">
+            <input type="text" placeholder="First Name" class="FirstNamReg">
+            <input type="text" placeholder="Last Name" class="LastNamReg">
+            <input type="text" placeholder="Phone Number" class="NumberReg">
+            <button class="btnReg butt-style">Register</button>
+          </form>
+          <a class="link-login link-register">Log In</a>
+        </div>
+
+        <span class="close-modal" id="close-X">&times;</span>
+
+        <div class="cart">
+          <h2>თქვენი კალათა</h2>
+          <div class="cart-items"></div>
+          <button class="checkout-btn">Pay Now</button>
+          <button class="logOut butt-style">Log Out</button>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Asian Food Delivery. All right reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
